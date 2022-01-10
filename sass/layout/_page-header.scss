@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 .nav {
   @media screen and(min-width:768px) {
@@ -104,7 +105,8 @@
   cursor: pointer;
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 0;
+  transform: translateY(10px);
   padding: 0;
   background-color: transparent;
   border: none;

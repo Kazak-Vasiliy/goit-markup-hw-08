@@ -1,0 +1,207 @@
+.header {
+  outline: var(--header-border-color) solid 1px;
+  @media screen and(max-width:767px) {
+    padding: 16px 0;
+  }
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav {
+  @media screen and(min-width:768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+.nav__list {
+  display: flex;
+  margin-left: 88px;
+  @media screen and(max-width:767px) {
+    display: none;
+  }
+  @media screen and(min-width:768px) {
+    padding: 32px 0;
+    width: 294px;
+    justify-content: space-between;
+  }
+  @media screen and(min-width:1200px) {
+    margin-left: 93px;
+  }
+}
+.nav__link {
+  @include font(500, 14px, 1.14, 0.02em);
+  position: relative;
+  color: inherit;
+  transition: color 250ms var(--timeles);
+  &:hover,
+  &:focus {
+    color: var(--variable-color);
+  }
+  &.activ::after {
+    position: absolute;
+    left: 0;
+    bottom: -33px;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--variable-color);
+  }
+}
+.activ {
+  color: var(--variable-color);
+}
+.contacts-list {
+  @media screen and(max-width:767px) {
+    display: none;
+  }
+  @media screen and(min-width:1200px) {
+    display: flex;
+  }
+}
+.contacts-list__item {
+  @media screen and(max-width:1199px) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and(min-width:1200px) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.contacts-list__link {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--second-color);
+  transition: color 250ms var(--timeles);
+  &:hover,
+  &:focus {
+    color: var(--variable-color);
+  }
+  @media screen and(min-width:768px) {
+    @include font(500, 12px, 1.16, 0.02em);
+  }
+  @media screen and(min-width:1200px) {
+    font-size: 14px;
+    line-height: 1.14;
+  }
+}
+.contacts-list__icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.open-menu__btn {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: fill 250ms var(--timeles);
+  &:hover {
+    fill: var(--variable-color);
+  }
+  @media screen and(min-width:768px) {
+    display: none;
+  }
+}
+.close-menu__btn {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  padding: 0;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  transition: fill 250ms var(--timeles);
+  &:hover {
+    fill: var(--variable-color);
+  }
+}
+.mob-menu {
+  position: fixed;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  padding: 48px 40px;
+  z-index: 999;
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+.mob-menu__link {
+  @include font(500, 40px, 1.17, 0.02em);
+  color: var(--first-color);
+  &:hover,
+  &:focus {
+    color: var(--variable-color);
+  }
+  &--activ {
+    color: var(--variable-color);
+  }
+}
+.contacts-menu {
+  margin-bottom: 64px;
+  &__tel {
+    @include font(500, 24px, 1.16, 0.02em);
+    margin-bottom: 32px;
+    display: block;
+    color: var(--variable-color);
+    @media screen and(min-width:480px) {
+      font-size: 34px;
+      line-height: 1.17;
+    }
+  }
+  &__mail {
+    color: var(--second-color);
+    display: block;
+    @include font(500, 24px, 1.16, 0.02em);
+  }
+}
+.social-mob-menu {
+  max-width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.social-mob-menu__list {
+  position: relative;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 22px;
+    top: 0;
+    right: 0;
+    transform: translateX(10px);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
+.social-mob-menu__link {
+  display: block;
+  color: var(--variable-color);
+  @include font(500, 18px, 1.2, 0.02em);
+  text-decoration: underline;
+}
